@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Gemini Desktop Native
+GenericName=Google Gemini Client
+Comment=Native desktop client for Google Gemini with Spotlight overlay
+Exec=gemini-desktop-native %U
+Icon=org.native.GeminiDesktop
+Terminal=false
+Categories=Network;Utility;GTK;
+Keywords=Gemini;AI;Google;Bard;Chat;
+StartupNotify=true
+StartupWMClass=org.native.GeminiDesktop
+X-GNOME-UsesNotifications=true
+SingleMainWindow=true

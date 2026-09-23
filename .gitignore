@@ -1,0 +1,11 @@
+# Build artifacts
+build/
+.flatpak-builder/
+*.flatpak
+
+# Python
+__pycache__/
+*.pyc
+
+# Local flatpak repo (build.sh output)
+../gemini-flatpak-repo
