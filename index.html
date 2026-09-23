@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Gemini Desktop Native</title>
+<!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Roboto Flex & JetBrains Mono -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&amp;family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
     tailwind.config = {
@@ -64,140 +67,257 @@
             "on-primary": "#ffffff",
             "on-error-container": "#93000a"
           },
-          "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }
-        }
-      }
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem",
+            "margin-sm": "1rem",
+            "margin": "2rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Roboto Flex"],
+            "label-md": ["Roboto Flex"],
+            "body-md": ["Roboto Flex"],
+            "label-lg": ["Roboto Flex"],
+            "headline-xl-mobile": ["Roboto Flex"],
+            "headline-lg": ["Roboto Flex"],
+            "headline-md": ["Roboto Flex"],
+            "code-block": ["JetBrains Mono"],
+            "headline-sm": ["Roboto Flex"],
+            "body-sm": ["Roboto Flex"],
+            "label-sm": ["Roboto Flex"],
+            "body-lg": ["Roboto Flex"],
+            "headline-xl": ["Roboto Flex"],
+            "code-inline": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.5px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500" }],
+            "code-block": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.4px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.25px", "fontWeight": "500" }],
+            "code-inline": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        },
+      },
     }
   </script>
 <style>
-    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; vertical-align: middle; line-height: 1; }
-    .material-symbols-outlined.fill-icon { font-variation-settings: 'FILL' 1; }
-    .elevation-1 { box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15); }
-    .elevation-2 { box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15); }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    .elevation-1 {
+      box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    }
+    .elevation-2 {
+      box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+    }
   </style>
 </head>
-<body class="bg-surface text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
-<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-surface-variant dark:border-outline-variant shadow-sm top-0 sticky z-50">
+<body class="bg-surface dark:bg-inverse-surface text-on-surface dark:text-inverse-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-surface-variant dark:border-outline-variant shadow-sm docked full-width top-0 sticky z-50">
 <div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-16">
+<!-- Brand & Product Identity -->
 <div class="flex items-center gap-6">
 <a class="flex items-center gap-2.5 group" href="#">
 <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform duration-150">
 <span class="material-symbols-outlined fill-icon text-primary-container text-[22px]" data-icon="sparkles">arrow_back_ios_new</span>
 </div>
-<span class="text-headline-sm font-semibold text-on-surface dark:text-inverse-on-surface tracking-tight">Gemini Desktop</span>
+<span class="text-headline-sm font-headline-sm font-normal text-on-surface dark:text-inverse-on-surface tracking-tight font-semibold">Gemini Desktop</span>
 </a>
+<!-- Desktop Navigation Items (Active: Overview) -->
 <nav class="hidden md:flex items-center space-x-1 pl-4">
-<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary font-medium py-4 px-3 text-label-lg transition-colors" href="#overview">Overview</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-on-surface py-4 px-3 text-label-lg hover:bg-surface-container-low transition-colors" href="#systems">Specs</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-on-surface py-4 px-3 text-label-lg hover:bg-surface-container-low transition-colors" href="#features">Features</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-on-surface py-4 px-3 text-label-lg hover:bg-surface-container-low transition-colors" href="#automation">CLI</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary font-medium py-4 px-3 text-label-lg font-label-lg transition-colors duration-150 ease-in-out" href="#overview">Overview</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-normal hover:text-on-surface dark:hover:text-inverse-on-surface py-4 px-3 text-label-lg font-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-150 ease-in-out" href="#systems">Specs</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-normal hover:text-on-surface dark:hover:text-inverse-on-surface py-4 px-3 text-label-lg font-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-150 ease-in-out" href="#features">Features</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-normal hover:text-on-surface dark:hover:text-inverse-on-surface py-4 px-3 text-label-lg font-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-150 ease-in-out" href="#automation">CLI</a>
 </nav>
 </div>
+<!-- Action Items & Secondary Buttons -->
 <div class="flex items-center gap-3">
-<button aria-label="Toggle dark mode" class="p-2 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-container-low transition-colors" id="theme-toggle" type="button">
+<button aria-label="Toggle dark mode" class="p-2 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-container-low transition-colors duration-150" id="theme-toggle" type="button">
 <span class="material-symbols-outlined text-[20px]" data-icon="dark_mode">dark_mode</span>
 </button>
-<a class="inline-flex items-center justify-center gap-1.5 px-5 h-9 bg-primary-container hover:bg-primary text-on-primary rounded-lg text-label-lg font-medium elevation-1 transition-all hover:shadow" href="#quick-install">
+<a class="inline-flex items-center justify-center gap-1.5 px-5 h-9 bg-primary-container hover:bg-primary text-on-primary rounded-lg text-label-lg font-label-lg font-medium elevation-1 transition-all duration-150 hover:shadow" href="#quick-install">
 <span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
-Download Native
-</a>
+          Download Native
+        </a>
 </div>
 </div>
 </header>
+<!-- Main Content Canvas -->
 <main class="w-full max-w-7xl mx-auto px-6 py-12 md:py-16 space-y-20">
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="flex flex-col items-center text-center max-w-4xl mx-auto pt-4 pb-2" id="overview">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant/60 rounded-full text-label-md text-on-surface-variant mb-6 shadow-sm">
+<!-- Release Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant/60 rounded-full text-label-md font-label-md text-on-surface-variant mb-6 shadow-sm">
 <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
 <span class="font-medium text-on-surface">v2.1.0 Native Release Available</span>
 </div>
-<h1 class="text-headline-xl md:text-display-lg text-on-surface mb-4 tracking-tight">Gemini Desktop Native</h1>
-<p class="text-headline-md text-primary font-medium mb-4">A native desktop client for Google Gemini</p>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mb-8 leading-relaxed">A lightweight native wrapper combining system-level sandboxing, seamless hardware acceleration, and integrated desktop capabilities without browser chrome bloat.</p>
+<!-- Main Headline -->
+<h1 class="text-headline-xl md:text-display-lg font-headline-xl md:font-display-lg text-on-surface mb-4 tracking-tight">
+        Gemini Desktop Native
+      </h1>
+<!-- Tagline -->
+<p class="text-headline-md font-headline-md text-primary font-medium mb-4">
+        A native desktop client for Google Gemini
+      </p>
+<!-- Supporting Statement -->
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-8 leading-relaxed">
+        A lightweight native wrapper combining system-level sandboxing, seamless hardware acceleration, and integrated desktop capabilities without browser chrome bloat.
+      </p>
+<!-- CTAs -->
 <div class="flex flex-wrap items-center justify-center gap-4">
-<a class="inline-flex items-center justify-center gap-2 h-11 px-6 bg-primary-container hover:bg-primary text-on-primary rounded-lg text-label-lg font-medium elevation-1 transition-all" href="#quick-install">
-<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>Install via Flathub
-</a>
-<a class="inline-flex items-center justify-center gap-2 h-11 px-6 border border-outline-variant hover:border-primary bg-surface-container-lowest hover:bg-surface-container-low text-primary rounded-lg text-label-lg font-medium transition-all" href="https://github.com/gairxx/gemini-desktop-native" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[20px]" data-icon="code">code</span>View on GitHub
-</a>
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 bg-primary-container hover:bg-primary text-on-primary rounded-lg text-label-lg font-label-lg font-medium elevation-1 hover:elevation-2 transition-all duration-150" href="#quick-install">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+          Install now
+        </a>
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 border border-outline-variant hover:border-primary bg-surface-container-lowest hover:bg-surface-container-low text-primary rounded-lg text-label-lg font-label-lg font-medium transition-all duration-150" href="https://github.com/gairxx/gemini-desktop-native" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]" data-icon="code">code</span>
+          View on GitHub
+        </a>
 </div>
 </section>
-<!-- Quick Install -->
+<!-- Section 2: Quick Install Command (Elevated Card) -->
 <section class="max-w-3xl mx-auto" id="quick-install">
 <div class="bg-surface-container-lowest border border-outline-variant rounded-lg elevation-1 p-6 space-y-4">
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[20px]" data-icon="terminal">terminal</span>
-<h2 class="text-headline-sm text-on-surface">Quick Install</h2>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Quick Install</h2>
 </div>
-<span class="px-2.5 py-0.5 text-label-sm font-medium bg-[#e8f0fe] text-primary rounded-full">Flathub Verified</span>
+<span class="px-2.5 py-0.5 text-label-sm font-label-sm font-medium bg-[#e8f0fe] text-primary rounded-full">curl installer</span>
 </div>
-<div class="bg-inverse-surface rounded-lg p-4 flex items-center justify-between text-code-block text-inverse-on-surface shadow-inner border border-outline-variant/30">
+<!-- Terminal Snippet -->
+<div class="bg-inverse-surface rounded-lg p-4 flex items-center justify-between text-code-block font-code-block text-inverse-on-surface shadow-inner border border-outline-variant/30">
 <div class="flex items-center gap-3 overflow-x-auto select-all pr-4">
 <span class="text-outline select-none font-medium">$</span>
-<code class="whitespace-nowrap font-normal text-inverse-on-surface" id="cmd-install">flatpak install flathub org.native.GeminiDesktop</code>
+<code class="whitespace-nowrap font-normal text-inverse-on-surface" id="cmd-install">curl -fsSL https://raw.githubusercontent.com/gairxx/gemini-desktop-native/main/install.sh | bash</code>
 </div>
 <button aria-label="Copy install command" class="shrink-0 p-1.5 rounded text-surface-variant hover:text-surface-bright hover:bg-surface-variant/20 transition-colors" id="copy-btn" onclick="copySnippet('cmd-install', 'copy-btn')">
 <span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
 </button>
 </div>
-<div class="flex flex-wrap items-center justify-between pt-1 gap-2 text-body-sm text-on-surface-variant">
+<!-- Subtitle Run tip -->
+<div class="flex flex-wrap items-center justify-between pt-1 gap-2 text-body-sm font-body-sm text-on-surface-variant">
 <div class="flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px] text-primary" data-icon="info">info</span>
 <span>Launch via CLI:</span>
-<code class="font-code-inline px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">flatpak run org.native.GeminiDesktop</code>
+<code class="font-code-inline text-code-inline px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">flatpak run org.native.GeminiDesktop</code>
 </div>
-<span class="text-outline text-label-sm">Arch • Fedora • Ubuntu • Debian</span>
+<span class="text-outline text-label-sm font-label-sm">Arch • Fedora • Ubuntu • Debian</span>
 </div>
 </div>
 </section>
-<!-- Systems -->
+<!-- Section 3: Systems Section -->
 <section class="space-y-6" id="systems">
 <div class="flex items-center gap-2.5 border-b border-outline-variant/50 pb-3">
 <span class="material-symbols-outlined text-primary text-[24px]" data-icon="memory">memory</span>
-<h2 class="text-headline-lg text-on-surface">Systems Architecture</h2>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Systems Architecture</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all flex flex-col justify-between">
+<!-- Linux Native -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all duration-200 flex flex-col justify-between">
 <div class="space-y-3">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]" data-icon="layers">layers</span></div>
-<h3 class="text-headline-sm text-on-surface">Linux Native</h3>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Built natively for modern Linux distributions with minimal overhead and deep kernel integration, ensuring raw binary speed.</p>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="layers">layers</span>
 </div>
-<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm text-outline"><span>Low Memory Footprint</span><span class="text-secondary font-medium">POSIX Target</span></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Linux Native</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Built natively for modern Linux distributions with minimal overhead and deep kernel integration, ensuring raw binary speed.
+            </p>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all flex flex-col justify-between">
+<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Low Memory Footprint</span>
+<span class="text-secondary font-medium">POSIX Target</span>
+</div>
+</div>
+<!-- Flatpak Sandboxed -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all duration-200 flex flex-col justify-between">
 <div class="space-y-3">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]" data-icon="security">security</span></div>
-<h3 class="text-headline-sm text-on-surface">Flatpak Sandboxed</h3>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Secure runtime isolation utilizing XDG desktop portals for secure camera, file picker, and notification access without ambient leaks.</p>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="security">security</span>
 </div>
-<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm text-outline"><span>Bubblewrap Isolated</span><span class="text-primary font-medium">XDG Portal v3</span></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Flatpak Sandboxed</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Secure runtime isolation utilizing XDG desktop portals for secure camera, file picker, and notification access without ambient leaks.
+            </p>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all flex flex-col justify-between">
+<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Bubblewrap Isolated</span>
+<span class="text-primary font-medium">XDG Portal v3</span>
+</div>
+</div>
+<!-- GTK4 with Libadwaita -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all duration-200 flex flex-col justify-between">
 <div class="space-y-3">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]" data-icon="palette">palette</span></div>
-<h3 class="text-headline-sm text-on-surface">GTK4 with Libadwaita</h3>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Adaptive GNOME-native styling and smooth dark/light theme transitions matching modern system guidelines and responsive container sizes.</p>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="palette">palette</span>
 </div>
-<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm text-outline"><span>Dynamic Layouts</span><span class="text-on-surface font-medium">Libadwaita 1.5</span></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">GTK4 with Libadwaita</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Adaptive GNOME-native styling and smooth dark/light theme transitions matching modern system guidelines and responsive container sizes.
+            </p>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all flex flex-col justify-between">
+<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Dynamic Layouts</span>
+<span class="text-on-surface font-medium">Libadwaita 1.5</span>
+</div>
+</div>
+<!-- WebKitGTK 6.0 Rendering -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all duration-200 flex flex-col justify-between">
 <div class="space-y-3">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]" data-icon="speed">speed</span></div>
-<h3 class="text-headline-sm text-on-surface">WebKitGTK 6.0 Rendering</h3>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Fast hardware-accelerated web rendering powered by modern WebKit with smooth scrolling, GPU composing, and optimized CSS layout pipelines.</p>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="speed">speed</span>
 </div>
-<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm text-outline"><span>Hardware Accelerated</span><span class="text-primary font-medium">Wayland / X11</span></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">WebKitGTK 6.0 Rendering</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Fast hardware-accelerated web rendering powered by modern WebKit with smooth scrolling, GPU composing, and optimized CSS layout pipelines.
+            </p>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all md:col-span-2 lg:col-span-2 flex flex-col justify-between">
+<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Hardware Accelerated</span>
+<span class="text-primary font-medium">Wayland / X11</span>
+</div>
+</div>
+<!-- Desktop Environment Support -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 hover:border-primary transition-all duration-200 md:col-span-2 lg:col-span-2 flex flex-col justify-between">
 <div class="space-y-3">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]" data-icon="desktop_windows">desktop_windows</span></div>
-<h3 class="text-headline-sm text-on-surface">Desktop Environment Support</h3>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Works seamlessly across GNOME, KDE Plasma, XFCE, and other standard Freedesktop-compliant Linux window managers, including tiling window systems like Sway and Hyprland.</p>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="desktop_windows">desktop_windows</span>
 </div>
-<div class="mt-4 pt-3 border-t border-surface-variant flex flex-wrap gap-2 text-label-sm">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Desktop Environment Support</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Works seamlessly across GNOME, KDE Plasma, XFCE, and other standard Freedesktop-compliant Linux window managers, including tiling window systems like Sway and Hyprland.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-variant flex flex-wrap gap-2 text-label-sm font-label-sm">
 <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">GNOME Shell</span>
 <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">KDE Plasma 6</span>
 <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Wayland &amp; X11</span>
@@ -206,52 +326,104 @@ Download Native
 </div>
 </div>
 </section>
-<!-- Features -->
+<!-- Section 4: Key Features -->
 <section class="space-y-6" id="features">
 <div class="flex items-center gap-2.5 border-b border-outline-variant/50 pb-3">
 <span class="material-symbols-outlined text-primary text-[24px]" data-icon="featured_play_list">featured_play_list</span>
-<h2 class="text-headline-lg text-on-surface">Key Features</h2>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Key Features</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all flex flex-col gap-3">
-<div class="flex items-center gap-3"><div class="p-2 rounded-lg bg-surface-container text-primary"><span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span></div><h3 class="text-headline-sm text-on-surface">Native notifications</h3></div>
-<p class="text-body-md text-on-surface-variant leading-relaxed">System tray unread indicators and freedesktop notifications delivering instant chat responses in the background.</p>
+<!-- Native Notifications -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all duration-150 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all flex flex-col gap-3">
-<div class="flex items-center gap-3"><div class="p-2 rounded-lg bg-surface-container text-primary"><span class="material-symbols-outlined text-[22px]" data-icon="dock">dock</span></div><h3 class="text-headline-sm text-on-surface">System tray integration</h3></div>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Background execution with quick menu actions: toggle visibility, prompt reset, and instant settings access.</p>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Native notifications</h3>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all flex flex-col gap-3">
-<div class="flex items-center gap-3"><div class="p-2 rounded-lg bg-surface-container text-primary"><span class="material-symbols-outlined text-[22px]" data-icon="search">search</span></div><h3 class="text-headline-sm text-on-surface">Frameless spotlight overlay</h3></div>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Instant summon hotkey bar with frosted glass effect for quick queries without leaving your active workspace.</p>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            System tray unread indicators and freedesktop notifications delivering instant chat responses in the background.
+          </p>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all flex flex-col gap-3">
-<div class="flex items-center gap-3"><div class="p-2 rounded-lg bg-surface-container text-primary"><span class="material-symbols-outlined text-[22px]" data-icon="keyboard">keyboard</span></div><h3 class="text-headline-sm text-on-surface">Global hotkeys</h3></div>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Configurable system-wide shortcuts for instant access, clipboard dispatch, and rapid text generation.</p>
+<!-- System Tray Integration -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all duration-150 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="dock">dock</span>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all flex flex-col gap-3">
-<div class="flex items-center gap-3"><div class="p-2 rounded-lg bg-surface-container text-primary"><span class="material-symbols-outlined text-[22px]" data-icon="contrast">contrast</span></div><h3 class="text-headline-sm text-on-surface">Dark/light theme mirroring</h3></div>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Automatically syncs with your desktop appearance settings and standard Freedesktop color scheme preference portals.</p>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">System tray integration</h3>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all flex flex-col gap-3">
-<div class="flex items-center gap-3"><div class="p-2 rounded-lg bg-surface-container text-primary"><span class="material-symbols-outlined text-[22px]" data-icon="verified_user">verified_user</span></div><h3 class="text-headline-sm text-on-surface">Chrome-compatible user agent</h3></div>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Uncompromised Google Gemini web experience and authentication without triggering legacy browser restrictions.</p>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Background execution with quick menu actions: toggle visibility, prompt reset, and instant settings access.
+          </p>
+</div>
+<!-- Frameless Spotlight Overlay -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all duration-150 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="search">search</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Frameless spotlight overlay</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Instant summon hotkey bar with frosted glass effect for quick queries without leaving your active workspace.
+          </p>
+</div>
+<!-- Global Hotkeys -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all duration-150 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="keyboard">keyboard</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Global hotkeys</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Configurable system-wide shortcuts for instant access, clipboard dispatch, and rapid text generation.
+          </p>
+</div>
+<!-- Dark/Light Theme Mirroring -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all duration-150 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="contrast">contrast</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Dark/light theme mirroring</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Automatically syncs with your desktop appearance settings and standard Freedesktop color scheme preference portals.
+          </p>
+</div>
+<!-- Chrome-compatible User Agent -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 elevation-1 hover:elevation-2 transition-all duration-150 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Chrome-compatible user agent</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Uncompromised Google Gemini web experience and authentication without triggering legacy browser restrictions.
+          </p>
 </div>
 </div>
 </section>
-<!-- Automation note -->
+<!-- Section 5: Automation & Note Section -->
 <section class="max-w-4xl mx-auto" id="automation">
+<!-- Callout Admonition with Left Border -->
 <div class="rounded-lg p-6 bg-[#e8f0fe] border-l-4 border-primary-container space-y-4 shadow-sm">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[22px]" data-icon="policy">policy</span>
-<h3 class="text-headline-sm text-on-surface font-semibold">Local Automation &amp; IPC Policy</h3>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Local Automation &amp; IPC Policy</h3>
 </div>
-<blockquote class="text-body-lg text-on-surface leading-relaxed italic">
-"The app exposes a local D-Bus control interface (org.freedesktop.AI.Control) for automation — usable only from the machine it runs on, not from the Gemini web page."
-</blockquote>
+<!-- Exact Verbatim Quote -->
+<blockquote class="text-body-lg font-body-lg text-on-surface leading-relaxed italic">
+          "The app exposes a local D-Bus control interface (org.freedesktop.AI.Control) for automation — usable only from the machine it runs on, not from the Gemini web page."
+        </blockquote>
+<!-- Monospace D-Bus CLI Example -->
 <div class="mt-4 bg-[#202124] rounded-lg p-4 text-inverse-on-surface font-code-block text-code-block border border-outline-variant/30 space-y-2">
-<div class="flex items-center justify-between text-outline text-label-sm border-b border-outline/30 pb-2">
-<span>D-Bus CLI Interface Example</span><span class="text-[#8ffa9b] font-mono">session bus</span>
+<div class="flex items-center justify-between text-outline text-label-sm font-label-sm border-b border-outline/30 pb-2">
+<span>D-Bus CLI Interface Example</span>
+<span class="text-[#8ffa9b] font-mono">session bus</span>
 </div>
 <div class="overflow-x-auto select-all pt-1">
 <code class="text-[#d8e2ff]">$ gdbus call --session \
@@ -260,26 +432,30 @@ Download Native
     --method org.freedesktop.AI.Control.ExecuteTool get_state '{}'</code>
 </div>
 </div>
-<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant pt-1">
 <span class="material-symbols-outlined text-[16px] text-primary" data-icon="lock">lock</span>
 <span>Zero external sockets opened. Sandboxed by default via Flatpak permission gates.</span>
 </div>
 </div>
 </section>
 </main>
-<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-surface-variant dark:border-outline-variant mt-20">
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-surface-variant dark:border-outline-variant docked full-width bottom mt-20">
 <div class="flex flex-col sm:flex-row justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto gap-4">
+<!-- Brand & Copyright -->
 <div class="flex items-center gap-3">
-<span class="text-body-md font-medium text-on-surface-variant dark:text-surface-variant">Gemini Desktop Native</span>
+<span class="text-body-md font-body-md font-medium text-on-surface-variant dark:text-surface-variant">Gemini Desktop Native</span>
 <span class="text-outline-variant">•</span>
-<span class="text-body-sm text-on-surface-variant dark:text-surface-variant">© 2026 gairxx • Licensed under GPL-3.0</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">© 2026 gairxx • Licensed under GPL-3.0</span>
 </div>
+<!-- Footer Navigation Links -->
 <div class="flex flex-wrap items-center gap-6">
-<a class="text-primary dark:text-inverse-primary font-medium text-label-md hover:underline transition-all" href="#automation">Native IPC Policy</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-on-surface text-label-md hover:underline transition-all" href="https://github.com/gairxx/gemini-desktop-native" rel="noopener noreferrer" target="_blank">Source</a>
+<a class="text-primary dark:text-inverse-primary font-medium text-label-md font-label-md hover:underline transition-all duration-150" href="#automation">Native IPC Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md hover:underline transition-all duration-150" href="https://github.com/gairxx/gemini-desktop-native" rel="noopener noreferrer" target="_blank">Source</a>
 </div>
 </div>
 </footer>
+<!-- Micro-interactions Script -->
 <script>
     function copySnippet(elementId, btnId) {
       const textToCopy = document.getElementById(elementId).innerText;
@@ -287,12 +463,16 @@ Download Native
         const btn = document.getElementById(btnId);
         const originalHTML = btn.innerHTML;
         btn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-[#8ffa9b]" data-icon="check">check</span>';
-        setTimeout(() => { btn.innerHTML = originalHTML; }, 2000);
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 2000);
       });
     }
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
-      themeBtn.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); });
+      themeBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
     }
   </script>
 </body></html>
