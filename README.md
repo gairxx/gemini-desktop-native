@@ -4,8 +4,16 @@ A native GTK4 / Libadwaita / WebKitGTK 6.0 Linux desktop client for [Google Gemi
 
 ## Install
 
+One-liner installer (downloads the prebuilt bundle from the [latest release](https://github.com/gairxx/gemini-desktop-native/releases/latest)):
+
 ```
-flatpak install flathub org.native.GeminiDesktop
+curl -fsSL https://raw.githubusercontent.com/gairxx/gemini-desktop-native/main/install.sh | bash
+```
+
+Or manually via the released bundle:
+
+```
+flatpak install --user ./org.native.GeminiDesktop.flatpak
 ```
 
 Run with:
@@ -36,6 +44,14 @@ gdbus call --session \
     --dest org.freedesktop.AI.Control \
     --object-path /org/freedesktop/AI/Control \
     --method org.freedesktop.AI.Control.GetCapabilities
+```
+
+## Development
+
+Build the bundle locally with [flatpak-builder](https://flatpak.org/):
+
+```
+./build.sh
 ```
 
 ## License
